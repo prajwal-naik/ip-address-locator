@@ -18,24 +18,27 @@ function MainApp({ setlocation }) {
                 
             //passing getData method to the lifecycle method
             // getData()
-            const res = await axios.get('https://geolocation-db.com/json/')
-            console.log(res.data.IPv4);
+            axios.get('https://geolocation-db.com/json/')
+            .then(res1 => {
+                axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=at_2DUYugLRIrR3HJ6SAtFo8LIzIY4Qr&ipAddress=${res1.data.IPv4}`)
+                .then(res => {
+                    console.log(res);
+                    setlocation([res.data.location.lat, res.data.location.lng].slice());
+                    setIp(res.data.ip);
+                    setdetailLocation(res.data.location.region + ' , ' + res.data.location.city);
+                    setpostalCode(res.data.location.postalCode);
+                    settimezone(res.data.location.timezone);
+                    setISP(res.data.isp);
+                    // console.log(loading);
+                    setloading(false);
+                    // var element = document.querySelector('div[id="mapid"]');
+                    // console.log("Element found. Clicking.", element)
+                    // simulateMouseClick(element)
+                })
+                }
+            );
+            // console.log(res.data.IPv4);
             // setlocation([res.data.latitude, res.data.longitude].slice());
-            axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=at_2DUYugLRIrR3HJ6SAtFo8LIzIY4Qr&ipAddress=${res.data.IPv4}`)
-            .then(res => {
-                console.log(res);
-                setlocation([res.data.location.lat, res.data.location.lng].slice());
-                setIp(res.data.ip);
-                setdetailLocation(res.data.location.region + ' , ' + res.data.location.city);
-                setpostalCode(res.data.location.postalCode);
-                settimezone(res.data.location.timezone);
-                setISP(res.data.isp);
-                // console.log(loading);
-                setloading(false);
-                // var element = document.querySelector('div[id="mapid"]');
-                // console.log("Element found. Clicking.", element)
-                // simulateMouseClick(element)
-            })
 
         }, []);
 
