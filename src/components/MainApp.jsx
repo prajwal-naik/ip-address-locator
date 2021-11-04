@@ -8,7 +8,16 @@ import Loader from "react-loader-spinner";
 
 function MainApp({ setlocation }) {
 
-        const getData = async () => {
+        // const getData = async () => {
+            
+
+        //     // setIP(res.data.IPv4)
+        // }
+
+        useEffect( () => {
+                
+            //passing getData method to the lifecycle method
+            // getData()
             const res = await axios.get('https://geolocation-db.com/json/')
             console.log(res.data.IPv4);
             // setlocation([res.data.latitude, res.data.longitude].slice());
@@ -28,14 +37,6 @@ function MainApp({ setlocation }) {
                 // simulateMouseClick(element)
             })
 
-
-            // setIP(res.data.IPv4)
-        }
-
-        useEffect( () => {
-                
-            //passing getData method to the lifecycle method
-            getData()
         }, []);
 
     const [loading, setloading] = useState(false)
