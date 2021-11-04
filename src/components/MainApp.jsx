@@ -43,11 +43,11 @@ function MainApp({ setlocation }) {
         }, [setlocation]);
 
     const [loading, setloading] = useState(false)
-    const [Ip, setIp] = useState("localhost")
-    const [postalCode, setpostalCode] = useState("000000")
-    const [detailLocation, setdetailLocation] = useState("None")
-    const [timezone, settimezone] = useState("+5:30")
-    const [ISP, setISP] = useState("Unknown")
+    const [Ip, setIp] = useState("-")
+    const [postalCode, setpostalCode] = useState("-")
+    const [detailLocation, setdetailLocation] = useState("-")
+    const [timezone, settimezone] = useState("-")
+    const [ISP, setISP] = useState("-")
 
  
     const { register, handleSubmit } = useForm();
