@@ -1,0 +1,8 @@
+.illustrationDiv{
+    min-height: 33vh;
+    /* border: 2px solid black; */
+    background-image: url("../pattern-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* z-index: 999; */
+}

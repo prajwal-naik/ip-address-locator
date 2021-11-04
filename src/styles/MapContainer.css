@@ -1,0 +1,10 @@
+#mapid { 
+    height: 67vh;
+    /* border: 2px solid black; */
+  }
+  
+  .mapContainer{
+    height: 100%; 
+    /* position: fixed !important; */
+    /* width: 100%; */
+  }
