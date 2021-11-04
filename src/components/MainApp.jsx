@@ -37,10 +37,10 @@ function MainApp({ setlocation }) {
                 })
                 }
             );
-            // console.log(res.data.IPv4);
+            console.log("USING EFFECT");
             // setlocation([res.data.latitude, res.data.longitude].slice());
 
-        });
+        }, [setlocation]);
 
     const [loading, setloading] = useState(false)
     const [Ip, setIp] = useState("localhost")
@@ -59,7 +59,7 @@ function MainApp({ setlocation }) {
             return;
         }
         setloading(true);
-        console.log("Loading: ", loading);
+        // console.log("Loading: ", loading);
         setIp(data.ipAddress);
         axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=at_2DUYugLRIrR3HJ6SAtFo8LIzIY4Qr&ipAddress=${data.ipAddress}`)
         .then(res => {
