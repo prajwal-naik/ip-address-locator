@@ -40,7 +40,7 @@ function MainApp({ setlocation }) {
             // console.log(res.data.IPv4);
             // setlocation([res.data.latitude, res.data.longitude].slice());
 
-        }, []);
+        });
 
     const [loading, setloading] = useState(false)
     const [Ip, setIp] = useState("localhost")
