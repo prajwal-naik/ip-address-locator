@@ -50,10 +50,10 @@ function MainApp({ setlocation }) {
     const [ISP, setISP] = useState("Unknown")
 
  
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         // console.log(data.ipAddress);
-        const ipReg = new RegExp('^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$');
+        const ipReg = new RegExp('^(?:[0-9]{1,3}.){3}[0-9]{1,3}$');
         if(!ipReg.test(data.ipAddress)){
             alert("Enter valid IP Address");
             return;
