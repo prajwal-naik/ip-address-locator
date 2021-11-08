@@ -3,9 +3,12 @@ import MapSection from './components/MapSection'
 import Illustration from './components/Illustration';
 import MainApp from "./components/MainApp"
 import { useState } from 'react';
+// import axios from 'axios';
 
 
-function App() {
+export default function App() {
+
+	// console.log("prerender", resu)
 
 	const [location, setlocation] = useState([51.505, -0.09])
 
@@ -22,4 +25,3 @@ function App() {
 	);
 }
 
-export default App;

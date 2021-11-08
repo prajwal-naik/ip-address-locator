@@ -1,8 +1,14 @@
 .illustrationDiv{
-    min-height: 33vh;
+    min-height: 35vh;
     /* border: 2px solid black; */
     background-image: url("../pattern-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     /* z-index: 999; */
+}
+
+@media only screen and (max-width:426px){
+    .illustrationDiv{
+        min-height: 55vh;
+    }
 }

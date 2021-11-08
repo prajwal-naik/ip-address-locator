@@ -1,6 +1,6 @@
 .mainApp{
     position:fixed;
-    max-height: 38vh;
+    /* max-height: 38vh; */
     top: 0;
     /* bottom: 0; */
     right: 0;
@@ -12,28 +12,72 @@
     gap: 28px;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    /* justify-content: center; */
     font-family: 'Rubik', sans-serif;
     font-size: 40px;
     color: white;
+    overflow: scroll;
 }
+
+.mainTitle{
+    /* border: 2px solid black; */
+    width : 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainTitle > p{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.inputDiv{
+    /* border: 2px solid black; */
+    /* border-right: 10px solid red; */
+    /* position: absolute; */
+    width: 100%;
+    /* flex: 1 */
+}
+
+/* .inputDivContainer{
+    max-width: 45%;
+    margin-inline: auto;
+    border: 2px solid blue;
+    display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+/* } */
 
 .inputDiv > form{
-    display: flex;
-    background-color: white;
+    max-width: 45%;
+    margin-inline: auto;
+    display: flex; 
+    /* background-color: white; */
+    /* align-items: center; */
+    /* justify-content: center; */
     border-radius: 10px;
-    /* border: 2px solid black */
+    /* max-width: 100%; */
+    /* border: 2px solid blue */
 }
 
-.inputDiv >form > input{
-    width: 30rem;
+ .inputDiv >form > input{
+    min-width: 0;
+    /* margin-inline: auto;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 400;*/
+    flex: 1 !important;
     border : 0;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    /* flex: 1;  */
     padding-left: 20px;
     font-size: 18px;
     font-weight: 400;
-}
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+} 
 
 .inputDiv > form >input:focus{
     outline: none;
@@ -65,11 +109,24 @@
     width: 100%;
 }
 
+.detailsDisplay::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.detailsDisplay {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
 .detailsDisplayContainer{
-    align-self: flex-end;
-    max-width: 58rem;
+    /* align-self: flex-end; */
+    max-width: 70%;
+
     /* border: 2px solid black; */
     background-color: white;
+    overflow: scroll;
     border-radius: 15px;
     margin-inline: auto;
     padding: 30px;
@@ -79,6 +136,16 @@
     --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.detailsDisplayContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.detailsDisplayContainer {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 
 .ipAddress, .location, .timeZone, .isp{
     display: flex;
@@ -106,3 +173,49 @@
     font-size: 28px;
     word-wrap: break-word;
 }
+
+@media only screen and (max-width:426px){
+    .inputDiv > form{
+        max-width: 100%;
+        margin-inline: 20px;
+    }
+
+    /* .detailsDisplay{
+        padding-inline: 20px;
+    } */
+
+    .detailsDisplayContainer{
+        align-self: flex-end;
+        max-width: 100%;
+        margin-inline: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detailsDisplayContainer > div{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ipAddress, .location, .timeZone{
+        border-right: 0px solid #969696;
+    }
+
+    .detailTitle{
+        font-size: 12px;
+        font-weight: 700;
+
+    }
+
+    .detailStat{
+        font-size: 18px;
+        font-weight: 600;
+
+    }
+
+    #utc{
+        display: none;
+    }
+}
+
+

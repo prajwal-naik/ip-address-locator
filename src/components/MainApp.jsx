@@ -37,7 +37,7 @@ function MainApp({ setlocation }) {
                 })
                 }
             );
-            console.log("USING EFFECT");
+            // console.log("USING EFFECT");
             // setlocation([res.data.latitude, res.data.longitude].slice());
 
         }, [setlocation]);
@@ -83,14 +83,20 @@ function MainApp({ setlocation }) {
 
     return (
         <div className = "mainApp">
-            <p>IP Address Tracker</p>
+            <div className="mainTitle">
+                <p>IP Address Tracker</p>
+            </div>
+            
             <div className="inputDiv">
-                <form onSubmit = {handleSubmit(onSubmit)}>
-                    <input type = "text" id = "ipInput" {...register("ipAddress", { required: true })} className = "ipInput" placeholder="Search for any IP address or domain"/>
-                    <button type = "submit" className="submitButton">
-                        <img src = {arrow} alt = "submitArrow"/>
-                    </button>
-                </form>
+                {/* <div className="inputDivContainer"> */}
+                    <form onSubmit = {handleSubmit(onSubmit)}>
+                        <input type = "text" id = "ipInput" {...register("ipAddress", { required: true })} className = "ipInput" placeholder="Search IP"/>
+                        <button type = "submit" className="submitButton">
+                            <img src = {arrow} alt = "submitArrow"/>
+                        </button>
+                    </form>
+                {/* </div> */}
+                
             </div>
                     {/* {errors.ipAddress && <span style = {{fontSize: "18px", color: "pink"}}>This field is required</span>} */}
 
@@ -124,7 +130,7 @@ function MainApp({ setlocation }) {
                             {/* <p>UTC<br/>{timezone}</p> */}
                             {
                                 loading?<Loader type="ThreeDots" color="black" height={50} width={50} /> 
-                                    : <p>UTC<br/>{timezone}</p>
+                                    : <p><span id = "utc">UTC<br/></span>{timezone}</p>
                             }
                         </div>
                     </div>

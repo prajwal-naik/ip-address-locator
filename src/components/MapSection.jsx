@@ -35,7 +35,7 @@ function MapSection({location}) {
 				// map.locate()
 				// map.setCenter(location)
 				setPosition(location)
-				map.flyTo(location, map.getZoom())
+				map.flyTo(location, map.getZoom(), 1)
 			},
 			// locationfound(e) {
 			//   setPosition(e.latlng)
@@ -45,7 +45,7 @@ function MapSection({location}) {
 	
 		return position === null ? null : (
 			<Marker position={position}>
-				<Popup>You are here</Popup>
+				<Popup>IP was tracked here</Popup>
 			</Marker>
 		)
 	}
@@ -56,11 +56,11 @@ function MapSection({location}) {
 					attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
-				<Marker position={location}>
+				{/* <Marker position={location}>
 					<Popup>
 					A pretty CSS3 popup. <br /> Easily customizable.
 					</Popup>
-				</Marker>
+				</Marker> */}
 				<LocationMarker />
 			</MapContainer>
 		</div>
