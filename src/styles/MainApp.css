@@ -17,7 +17,7 @@
     font-family: 'Rubik', sans-serif;
     font-size: 40px;
     color: white;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .mainTitle{
@@ -190,6 +190,8 @@
         margin-inline: 20px;
         display: flex;
         flex-direction: column;
+        --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     }
 
     .detailsDisplayContainer > div{
