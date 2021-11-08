@@ -206,7 +206,7 @@
     .detailTitle{
         font-size: 12px;
         font-weight: 700;
-
+        line-height: 0px;
     }
 
     .detailStat{

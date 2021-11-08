@@ -12,6 +12,6 @@
 
   @media only screen and (max-width:426px){
     #mapid{
-        min-height: 45vh;
+        height: 60vh;
     }
 }
